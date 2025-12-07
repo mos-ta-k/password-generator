@@ -1,0 +1,172 @@
+.app {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* Output Display */
+.output {
+  background-color: var(--output-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.output input {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  outline: none;
+}
+
+.output button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.output button:active {
+  transform: translateY(0);
+}
+
+/* Controls Container */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Length Slider */
+.controls label:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+input[type="range"] {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 8px;
+  background: #3F3F46;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--text-main);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Checkboxes */
+.controls label:not(:first-child) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.controls label:not(:first-child):hover {
+  color: var(--primary-color);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  background-color: var(--primary-color);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color); /* Correct invalid property value if using just color */
+   /* Actually clip-path on a solid block is better */
+   background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Generate Button */
+.generate-button {
+  background-color: var(--primary-color);
+  color: #000;
+  border: none;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  /* box-shadow: 0 4px 0 #ec0e9; darker shade for 3d effect */
+}
+
+.generate-button:hover {
+  background-color: var(--primary-hover);
+  /* transform: translateY(-2px); */
+  /* box-shadow: 0 6px 0 #e5e6e4; */
+}
+
+.generate-button:active {
+  /* transform: translateY(2px); */
+  box-shadow: 0 0 0 #6eb640;
+}
